@@ -190,8 +190,6 @@ class Frida:
                 api = script.exports_sync
                 self.api_handler(api)
                 sys.stdin.read()
-                script.unload()
-                session.detach()
         except frida.NotSupportedError:
             logger.exception('Not Supported Error')
         except (frida.ProcessNotFoundError,
